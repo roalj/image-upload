@@ -1,0 +1,1 @@
+docker run -d --name pg-image -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image -p 5432:5432 postgres:12
