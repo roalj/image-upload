@@ -31,10 +31,10 @@ public class ImageBean {
     @PostConstruct
     private void init() {
         httpClient = ClientBuilder.newClient();
-        baseUrl = "http://localhost:8081"; // only for demonstration
+        baseUrl = "http://comments:8081"; // only for demonstration
     }
 
-    public List<ImageEntity> getImageList(){
+    public List getImageList(){
         Query query = em.createNamedQuery("Image.getAll", ImageEntity.class);
         return query.getResultList();
     }
@@ -51,7 +51,7 @@ public class ImageBean {
         return imageEntity;
     }
 
-    public Integer getCommentCount(Integer imageId) {
+    private Integer getCommentCount(Integer imageId) {
         try {
             return httpClient
                     .target(baseUrl + "/api/comments/count")
