@@ -1,10 +1,19 @@
 package resource;
 
 import beans.ImageBean;
+import beans.MongoConnection;
+import beans.MongoHelper;
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import entities.Image;
 import entities.ImageEntity;
+import entities.ObjectIdHolder;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -12,7 +21,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-
+import javax.ejb.EJB;
+import com.mongodb.BasicDBObject;
 @ApplicationScoped
 @Path("/images")
 @Produces(MediaType.APPLICATION_JSON)
@@ -25,7 +35,7 @@ public class ImageResource {
     @GET
     public Response getImageList() {
         final List<entities.ImageEntity> imageList = imageBean.getImageList();
-        connectToMongo();
+        //connectToMongo();
         return Response.ok(imageList).build();
     }
 
@@ -37,22 +47,24 @@ public class ImageResource {
         if (image == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
         return Response.status(Response.Status.OK).entity(image).build();
     }
 
-    private void connectToMongo(){
-        try {
-            MongoClientURI uri = new MongoClientURI(
-                    "mongodb+srv://pastafarian:goldi1@cluster0-mtykz.gcp.mongodb.net/test?retryWrites=true&w=majority");
-            MongoClient mongoClient = new MongoClient(uri);
-            MongoDatabase database = mongoClient.getDatabase("test");
-            database.createCollection("hello aljosa");
-            System.out.println("created collection");
+    @POST
+    @Path("/saveImage/")
+    public Response saveImage(Image image) {
+        System.out.println(image.toString());
+        Document document = new Document("title", image.getTitle()).append("content", image.getContent());
+        boolean isSaved = MongoConnection.saveDocument(document);
+        return Response.ok(isSaved).build();
+    }
 
-        }catch (Exception e){
-            System.out.println("exception: " + e.toString());
-            e.printStackTrace();
-        }
+    @POST
+    @Path("/getImage/")
+    public Response getImage(ObjectIdHolder objectIdHolder) {
+        System.out.println("id: " + objectIdHolder.getId());
+        Document document = new Document("_id", new ObjectId(objectIdHolder.getId()));
+        String response = MongoConnection.getDocument(document);
+        return Response.ok(response).build();
     }
 }
