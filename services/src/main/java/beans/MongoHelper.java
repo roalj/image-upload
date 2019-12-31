@@ -5,13 +5,10 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.ConcurrencyManagement;
-import javax.ejb.ConcurrencyManagementType;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Singleton;
 
 @Singleton
-@ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)
 public class MongoHelper {
 
     private MongoDatabase mongoDatabase;

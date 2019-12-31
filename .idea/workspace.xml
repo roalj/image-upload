@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40bde1fe-d0ee-4135-b35d-b277a7dc424a" name="Default Changelist" comment="added end points for saveImage and getImage">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/src/main/java/entities/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/src/main/java/entities/ObjectIdHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/src/main/java/beans/MongoConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/src/main/java/beans/MongoHelper.java" afterDir="false" />
+    <list default="true" id="40bde1fe-d0ee-4135-b35d-b277a7dc424a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_health_kumuluzee_health_2_1_0_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_microprofile_health_microprofile_health_api_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_osgi_org_osgi_annotation_versioning_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/TestDbHealthCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/src/main/java/entities/ObjectIdHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/models/src/main/java/entities/ObjectIdHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/models/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/models/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/services.iml" beforeDir="false" afterPath="$PROJECT_DIR$/services/services.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/beans/MongoHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/beans/MongoHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RSO/kumuluzee-samples/kumuluzee-health" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -97,8 +104,17 @@
       <workItem from="1572991774808" duration="5279000" />
       <workItem from="1574183733178" duration="11849000" />
       <workItem from="1574802830912" duration="19546000" />
-      <workItem from="1575194488117" duration="7957000" />
+      <workItem from="1575194488117" duration="21250000" />
+      <workItem from="1577526215780" duration="1314000" />
+      <workItem from="1577627946634" duration="33224000" />
     </task>
+    <task id="LOCAL−00001" summary="added end points for saveImage and getImage">
+      <created>1575202522364</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1575202522364</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

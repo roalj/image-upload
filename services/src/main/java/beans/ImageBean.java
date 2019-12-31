@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class ImageBean {
     private Logger log = Logger.getLogger(ImageBean.class.getName());
 
-    @PersistenceContext(unitName = "images-jpa")
+    //@PersistenceContext(unitName = "images-jpa")
     private EntityManager em;
 
     private Client httpClient;

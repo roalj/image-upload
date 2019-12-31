@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-upload-deployment
+  labels:
+    app: image-upload
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-upload
+  template:
+    metadata:
+      labels:
+        app: image-upload
+    spec:
+      containers:
+        - name: image-upload
+          image: eu.gcr.io/modified-badge-260712/image-upload:v3
+          ports:
+            - containerPort: 8080
+              name: server
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: server
+            initialDelaySeconds: 20
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: server
+            initialDelaySeconds: 20
+            periodSeconds: 3
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-upload
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: server
+  selector:
+    app: image-upload

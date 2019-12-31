@@ -21,7 +21,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import javax.ejb.EJB;
+
 import com.mongodb.BasicDBObject;
 @ApplicationScoped
 @Path("/images")
@@ -29,25 +29,26 @@ import com.mongodb.BasicDBObject;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ImageResource {
 
+    private static boolean isTestCheckOn = true;
+
     @Inject
     private ImageBean imageBean;
 
     @GET
     public Response getImageList() {
-        final List<entities.ImageEntity> imageList = imageBean.getImageList();
-        //connectToMongo();
-        return Response.ok(imageList).build();
+        //final List<entities.ImageEntity> imageList = imageBean.getImageList();
+        //
+        isTestCheckOn = false;
+        String welcome = "welcome to instagram restservice";
+        return Response.ok(welcome).build();
     }
 
-    @GET
-    @Path("/{imageId}")
-    public Response getImageMetadata(@PathParam("imageId") Integer imageId) {
-
-        ImageEntity image = imageBean.getImage(imageId);
-        if (image == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-        return Response.status(Response.Status.OK).entity(image).build();
+    @POST
+    @Path("/setTestCheck/")
+    public Response setTestHealthCheck(ObjectIdHolder objectIdHolder) {
+        System.out.println("is checkOn: " + objectIdHolder.getIsCheckOn());
+        isTestCheckOn = objectIdHolder.getIsCheckOn();
+        return Response.ok(isTestCheckOn).build();
     }
 
     @POST
@@ -66,5 +67,9 @@ public class ImageResource {
         Document document = new Document("_id", new ObjectId(objectIdHolder.getId()));
         String response = MongoConnection.getDocument(document);
         return Response.ok(response).build();
+    }
+
+    public static boolean isIsTestCheckOn() {
+        return isTestCheckOn;
     }
 }

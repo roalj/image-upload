@@ -1,17 +1,23 @@
 kumuluzee:
-  name: rso
+  name: upload-service
   env:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://localhost:8080
+    base-url: http://image-upload:8080
     http:
       port: 8080
-  datasources:
-    - jndi-name: jdbc/ImageMetadataDS
-      connection-url: jdbc:postgresql://34.77.126.116:5432/image
-
-      username: postgres
-      password: postgres
-      max-pool-size: 20
-
+  health:
+    servlet:
+      mapping: /health
+      enabled: true
+    logs:
+      enabled: true
+      level: INFO
+      period-s: 30
+    checks:
+        mongo-health-check:
+          connection-url:  mongodb+srv://pastafarian:goldi1@cluster0-mtykz.gcp.mongodb.net/test?retryWrites=true&w=majority
+          type: liveness
+        disk-space-health-check:
+          threshold: 100000000
