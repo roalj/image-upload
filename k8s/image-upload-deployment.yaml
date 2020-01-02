@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: image-upload-deployment
-  labels:
-    app: image-upload
 spec:
   replicas: 1
   selector:
@@ -15,8 +13,17 @@ spec:
         app: image-upload
     spec:
       containers:
-        - name: image-upload
-          image: eu.gcr.io/modified-badge-260712/image-upload:v3
+        - image: eu.gcr.io/modified-badge-260712/image-upload:v12
+          name: image-upload
+          env:
+            - name: KUMULUZEE_DISCOVERY_CLUSTER
+              value: gcloud
+            - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
+              value: http://etcd:2379
+            - name: KUMULUZEE_CONFIG_ETCD_HOSTS
+              value: http://etcd:2379
+            - name: KUMULUZEE_SERVER_BASEURL
+              value: http://34.76.167.182:8080
           ports:
             - containerPort: 8080
               name: server

@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "images")
-@NamedQueries(value =
-        {
-                @NamedQuery(name = "Image.getAll", query = "SELECT im FROM ImageEntity im")
-        })
+
 public class ImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +28,25 @@ public class ImageEntity {
 
     @Transient
     private Integer commentsCount;
+
+    private String mongoId;
+
+    public ImageEntity(String mongoId) {
+        this.mongoId = mongoId;
+        this.title ="testTitle";
+        this.description ="testDescription";
+        this.height = 1;
+        this.width = 1;
+        this.uri = "uri";
+    }
+
+    public String getMongoId() {
+        return mongoId;
+    }
+
+    public void setMongoId(String mongoId) {
+        this.mongoId = mongoId;
+    }
 
     public Integer getId() {
         return id;

@@ -1,5 +1,6 @@
 package com.aljosa;
 
+import org.eclipse.microprofile.health.Liveness;
 import org.eclipse.microprofile.health.Readiness;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
@@ -10,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.logging.Logger;
 
-@Readiness
+@Liveness
 @ApplicationScoped
 public class TestDbHealthCheck implements HealthCheck {
 
@@ -25,6 +26,11 @@ public class TestDbHealthCheck implements HealthCheck {
         }else{
             return HealthCheckResponse.named(TestDbHealthCheck.class.getSimpleName()).down().build();
         }
+
+    }
+}
+
+
        /* try {
 
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
@@ -38,5 +44,3 @@ public class TestDbHealthCheck implements HealthCheck {
         }
         return HealthCheckResponse.named(TestDbHealthCheck.class.getSimpleName()).down().build();
     }*/
-    }
-}

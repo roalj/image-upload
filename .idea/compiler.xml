@@ -12,10 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api" target="1.8" />
-      <module name="image-upload" target="1.8" />
-      <module name="models" target="1.8" />
-      <module name="services" target="1.8" />
+      <module name="api" target="11" />
+      <module name="image-upload" target="11" />
+      <module name="models" target="11" />
+      <module name="services" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,27 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40bde1fe-d0ee-4135-b35d-b277a7dc424a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_health_kumuluzee_health_2_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_microprofile_health_microprofile_health_api_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_osgi_org_osgi_annotation_versioning_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/TestDbHealthCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_eclipsesource_minimal_json_minimal_json_0_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_9_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_wnameless_json_flattener_0_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_config_kumuluzee_config_common_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_config_kumuluzee_config_etcd_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_config_kumuluzee_config_mp_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_discovery_kumuluzee_discovery_common_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_discovery_kumuluzee_discovery_etcd_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_metrics_kumuluzee_metrics_core_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vdurmont_semver4j_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_dropwizard_metrics_metrics_core_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_dropwizard_metrics_metrics_jvm_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_32_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_text_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_microprofile_config_microprofile_config_api_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_microprofile_metrics_microprofile_metrics_api_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mousio_etcd4j_2_17_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/image-upload.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image-upload.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_health_kumuluzee_health_2_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_kumuluz_ee_health_kumuluzee_health_2_1_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/aljosa/TestDbHealthCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/TestDbHealthCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/Application.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/src/main/java/entities/ObjectIdHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/models/src/main/java/entities/ObjectIdHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/models/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/models/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.iml" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/src/main/java/entities/ImageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/models/src/main/java/entities/ImageEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/target/classes/entities/ImageEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/models/target/classes/entities/ImageEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/services.iml" beforeDir="false" afterPath="$PROJECT_DIR$/services/services.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/beans/MongoHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/beans/MongoHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/target/classes/beans/ImageBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/services/target/classes/beans/ImageBean$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,7 +133,7 @@
       <workItem from="1574802830912" duration="19546000" />
       <workItem from="1575194488117" duration="21250000" />
       <workItem from="1577526215780" duration="1314000" />
-      <workItem from="1577627946634" duration="33224000" />
+      <workItem from="1577627946634" duration="78060000" />
     </task>
     <task id="LOCAL−00001" summary="added end points for saveImage and getImage">
       <created>1575202522364</created>
@@ -114,7 +141,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1575202522364</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="added kub config, added health checks -&gt; on kubernetes pods are not restarting on health check down">
+      <created>1577786468908</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1577786468908</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added end points for saveImage and getImage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added end points for saveImage and getImage" />
+    <MESSAGE value="added kub config, added health checks -&gt; on kubernetes pods are not restarting on health check down" />
+    <option name="LAST_COMMIT_MESSAGE" value="added kub config, added health checks -&gt; on kubernetes pods are not restarting on health check down" />
   </component>
 </project>
