@@ -13,7 +13,7 @@ spec:
         app: image-upload
     spec:
       containers:
-        - image: eu.gcr.io/modified-badge-260712/image-upload:v12
+        - image: eu.gcr.io/modified-badge-260712/image-upload:v24
           name: image-upload
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER
@@ -23,9 +23,9 @@ spec:
             - name: KUMULUZEE_CONFIG_ETCD_HOSTS
               value: http://etcd:2379
             - name: KUMULUZEE_SERVER_BASEURL
-              value: http://34.76.167.182:8080
+              value: http://34.76.167.182:8084
           ports:
-            - containerPort: 8080
+            - containerPort: 8084
               name: server
               protocol: TCP
           livenessProbe:
@@ -49,7 +49,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 8080
+    - port: 8084
       protocol: TCP
       targetPort: server
   selector:

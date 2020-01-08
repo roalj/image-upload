@@ -16,21 +16,6 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class MongoConnection {
 
-
-    public void connectToMongo(){
-        try {
-            MongoClientURI uri = new MongoClientURI(
-                    "mongodb+srv://pastafarian:goldi1@cluster0-mtykz.gcp.mongodb.net/test?retryWrites=true&w=majority");
-            MongoClient mongoClient = new MongoClient(uri);
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("test");
-            //database.createCollection("hello aljosa");
-            System.out.println("created collection");
-        }catch (Exception e){
-            System.out.println("exception: " + e.toString());
-            e.printStackTrace();
-        }
-    }
-
     public static boolean saveDocument(Document document){
         MongoClient mongoClient = null;
 
@@ -58,12 +43,16 @@ public class MongoConnection {
         String json = "";
 
         try {
+            BasicDBObject fields = new BasicDBObject();
+            fields.put("content", 1);
+            fields.put("_id", 0);
+
             mongoClient = new MongoClient(getMongoClientURI());
-            Document document = (Document) (getMongoConnection(mongoClient)).find(doc).first();
+            Document document = (Document) (getMongoConnection(mongoClient)).find(doc).projection(fields).first();
 
             if (document != null) {
                 json = document.toJson();
-                System.out.println("getDocument document " + json);
+               // System.out.println("getDocument document " + json);
             }
         } catch (Exception e) {
             System.out.println("exception: " + e.toString());

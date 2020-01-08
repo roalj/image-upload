@@ -1,10 +1,17 @@
 package beans;
 
 import com.kumuluz.ee.discovery.annotations.DiscoverService;
+import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import entities.Image;
 import entities.ImageEntity;
+import org.bson.Document;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -26,7 +33,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 
-@RequestScoped
+@ApplicationScoped
 public class ImageBean {
     private Logger log = Logger.getLogger(ImageBean.class.getName());
 
@@ -35,6 +42,9 @@ public class ImageBean {
 
     private Client httpClient;
     //private String baseUrl;
+
+    @Inject
+    private MongoClient mongoClient;
 
     @PostConstruct
     private void init() {
@@ -49,6 +59,34 @@ public class ImageBean {
     @Inject
     @DiscoverService(value = "comments-service", environment = "dev", version = "1.0.0")
     private Optional<String> baseUrl;
+
+
+    public boolean saveDocument(Document document){
+        MongoDatabase database = mongoClient.getDatabase("test");
+        MongoCollection<Document> collection = database.getCollection("images");
+        collection.insertOne(document);
+        return true;
+    }
+
+    public String getDocument(Document doc){
+        MongoDatabase database = mongoClient.getDatabase("test");
+        MongoCollection<Document> collection = database.getCollection("images");
+        FindIterable<Document> documents = null;
+
+        String json = "";
+
+            BasicDBObject fields = new BasicDBObject();
+            fields.put("content", 1);
+            fields.put("_id", 0);
+
+            Document document = collection.find(doc).projection(fields).first();
+
+        if (document != null) {
+            json = document.toJson();
+        }
+        return json;
+    }
+
 
     /*public List getImageList(){
         Query query = em.createNamedQuery("Image.getAll", ImageEntity.class);

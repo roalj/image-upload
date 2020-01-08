@@ -3,6 +3,8 @@ package resource;
 import beans.ImageBean;
 import beans.MongoConnection;
 import beans.MongoHelper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -12,6 +14,7 @@ import com.mongodb.client.MongoDatabase;
 import entities.Image;
 import entities.ImageEntity;
 import entities.ObjectIdHolder;
+import entities.ResponseHolder;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -20,6 +23,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.util.List;
 
 import com.mongodb.BasicDBObject;
@@ -55,32 +59,29 @@ public class ImageResource {
         System.out.println(image.toString());
         ObjectId id = new ObjectId();
         Document document = new Document("title", image.getTitle()).append("content", image.getContent()).append("_id", id);
-        System.out.println("is ObjectID id: " + id);
-        boolean isSaved = MongoConnection.saveDocument(document);
-        String resultSaving  = "";
-        if(isSaved){
-            resultSaving = imageBean.saveImageToCatalog(new ImageEntity("5e0d037caf9e9d5f20de913f"));
-            System.out.println("is saveImageToCatalog id: " + resultSaving);
-        }
+        System.out.println("is ObjectID id: " + id.toString());
+        boolean isSaved = imageBean.saveDocument(document);
+        String resultSaving = imageBean.saveImageToCatalog(new ImageEntity(id.toString(), image.getTitle()));
+        System.out.println("is saveImageToCatalog id: " + resultSaving);
 
         System.out.println("response: " + isSaved);
-        return Response.ok(isSaved + " resulult saving: " + resultSaving).build();
+        return Response.ok(new ResponseHolder(isSaved, resultSaving)).build();
     }
 
-    @GET
+    /*@GET
     @Path("/getComments/{imageId}")
     public Response getComments(@PathParam("imageId") Integer imageId) {
 
         int count = imageBean.getCommentCount(imageId);
         return Response.ok("Comment count" + count).build();
-    }
+    }*/
 
-    @POST
-    @Path("/getImage/")
-    public Response getImage(ObjectIdHolder objectIdHolder) {
-        System.out.println("id: " + objectIdHolder.getId());
-        Document document = new Document("_id", new ObjectId(objectIdHolder.getId()));
-        String response = MongoConnection.getDocument(document);
+    @GET
+    @Path("/getImage/{mongoId}")
+    public Response getImage(@PathParam("mongoId") String mongoId) {
+        System.out.println("id: " + mongoId);
+        Document document = new Document("_id", new ObjectId(mongoId));
+        String response = imageBean.getDocument(document);
         return Response.ok(response).build();
     }
 

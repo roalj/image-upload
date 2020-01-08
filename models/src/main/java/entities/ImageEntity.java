@@ -31,9 +31,9 @@ public class ImageEntity {
 
     private String mongoId;
 
-    public ImageEntity(String mongoId) {
+    public ImageEntity(String mongoId, String title) {
         this.mongoId = mongoId;
-        this.title ="testTitle";
+        this.title = title;
         this.description ="testDescription";
         this.height = 1;
         this.width = 1;
