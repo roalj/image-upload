@@ -85,6 +85,15 @@ public class ImageResource {
         return Response.ok(response).build();
     }
 
+    @GET
+    @Path("/getImageString/{mongoId}")
+    public String getImageString(@PathParam("mongoId") String mongoId) {
+        System.out.println("id: " + mongoId);
+        Document document = new Document("_id", new ObjectId(mongoId));
+        String imageString = imageBean.getDocument1(document);
+        return imageString;
+    }
+
     public static boolean isIsTestCheckOn() {
         return isTestCheckOn;
     }

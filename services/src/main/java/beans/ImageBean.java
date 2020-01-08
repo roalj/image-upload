@@ -87,23 +87,24 @@ public class ImageBean {
         return json;
     }
 
+    public String getDocument1(Document doc){
+        MongoDatabase database = mongoClient.getDatabase("test");
+        MongoCollection<Document> collection = database.getCollection("images");
+        FindIterable<Document> documents = null;
 
-    /*public List getImageList(){
-        Query query = em.createNamedQuery("Image.getAll", ImageEntity.class);
-        return query.getResultList();
-    }*/
+        String json = "";
 
-    /*public ImageEntity getImage(Integer id) {
-        ImageEntity imageEntity = em.find(ImageEntity.class, id);
+        BasicDBObject fields = new BasicDBObject();
+        fields.put("content", 1);
+        fields.put("_id", 0);
 
-        if (imageEntity == null) {
-            throw  new NotFoundException();
+        Document document = collection.find(doc).projection(fields).first();
+        if (document != null) {
+            json = document.getString("content");//document.toJson();
         }
+        return json;
+    }
 
-        imageEntity.setCommentsCount(getCommentCount(id));
-
-        return imageEntity;
-    }*/
     public String saveImageToCatalog(ImageEntity image) {
         //za test klici direktno na server
         if (baseUrlImageCatalog.isPresent()) {
