@@ -9,10 +9,10 @@ kumuluzee:
       port: 8084
   config:
     etcd:
-      hosts: http://192.168.29.109:2379
+      hosts: http://localhost:2379
   discovery:
     etcd:
-      hosts: http://192.168.29.109:2379
+      hosts: http://localhost:2379
   health:
     checks:
         mongo-health-check:

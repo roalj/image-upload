@@ -13,7 +13,7 @@ spec:
         app: image-upload
     spec:
       containers:
-        - image: eu.gcr.io/modified-badge-260712/image-upload:v28
+        - image: eu.gcr.io/modified-badge-260712/image-upload:v29
           name: image-upload
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER

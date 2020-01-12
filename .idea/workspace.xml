@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40bde1fe-d0ee-4135-b35d-b277a7dc424a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/aljosa/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/aljosa/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/resource/ImageResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/resource/ImageResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/image-upload-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/beans/ImageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/target/classes/beans/ImageBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/services/target/classes/beans/ImageBean$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/services/target/classes/beans/ImageBean.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +95,7 @@
       <workItem from="1577526215780" duration="1314000" />
       <workItem from="1577627946634" duration="83328000" />
       <workItem from="1578131806734" duration="15257000" />
-      <workItem from="1578436341006" duration="15667000" />
+      <workItem from="1578436341006" duration="20903000" />
     </task>
     <task id="LOCAL−00001" summary="added end points for saveImage and getImage">
       <created>1575202522364</created>
@@ -127,7 +121,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1578478419957</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="added getImageString, register as service">
+      <created>1578497353520</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1578497353520</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +151,7 @@
     <MESSAGE value="added kub config, added health checks -&gt; on kubernetes pods are not restarting on health check down" />
     <MESSAGE value="added send mongoId to image-catalog" />
     <MESSAGE value="added fixed mongoconnection" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fixed mongoconnection" />
+    <MESSAGE value="added getImageString, register as service" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getImageString, register as service" />
   </component>
 </project>
